@@ -18,10 +18,15 @@ const assertArraysEqual = function(arr1, arr2) {
 const letterPositions = function(sentence) {
   const results = {};
 
-
+  for (let i = 0; i < sentence.length; i++) {
+    if (results[sentence.charAt(i)] === undefined) {
+      results[sentence.charAt(i)] = [];
+    }
+    results[sentence.charAt(i)].push(i);
+  }
 
   return results;
-}
+};
 
 assertArraysEqual(letterPositions("hello").h, [0]);
 assertArraysEqual(letterPositions("hello").e, [1]);
