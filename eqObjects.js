@@ -21,7 +21,6 @@ const eqObjects = function(object1, object2) {
 
   if (keys1.length === keys2.length) {
     for (let key in object1) {
-      console.log(keys1[key]);
       if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
         if (!eqArrays(object1[key], object2[key])) return false;
       } else if (object1[key] !== object2[key]) return false;
@@ -46,5 +45,3 @@ assertEqual(eqObjects(cd, dc), true);
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2,), false);
-
-console.log(cd2.d);
