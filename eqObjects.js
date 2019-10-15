@@ -6,6 +6,15 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length === arr2.length) {
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) return false;
+    }
+  } else return false;
+  return true;
+};
+
 const eqObjects = function(object1, object2) {
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
@@ -19,10 +28,18 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const obj1 = { a: '1', b: '2' };
-const obj2 = { a: '1', b: '2' };
+const ab = { a: '1', b: '2' };
+const ba = { a: '1', b: '2' };
 
-const obj3 = { a: '1', b: '2', c: '3' };
+const abc = { a: '1', b: '2', c: '3' };
 
-assertEqual(eqObjects(obj1, obj2), true);
-assertEqual(eqObjects(obj2, obj3), false);
+assertEqual(eqObjects(ab, ba), true);
+assertEqual(eqObjects(ba, abc), false);
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+
+assertEqual(eqObjects(cd, dc), true);
+
+const cd2 = { c: "1", d: ["2", 3, 4] };
+assertEqual(eqObjects(cd, cd2,), false);
