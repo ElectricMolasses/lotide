@@ -1,17 +1,3 @@
-/*
-console.log("===OLD ARRAY VALIDATION===");
-assertEqual(testArray.length, 5);
-for (let i = 0; i < testArray.length; i++) {
-  assertEqual(testArray[i], 5 - i);
-}
-
-console.log("===NEW ARRAY VALIDATION===");
-assertEqual(newArray.length, 4);
-for (let i = 0; i < newArray.length; i++) {
-  assertEqual(newArray[i], 4 - i);
-}
-*/
-
 const { assert, expect } = require('chai');
 const tail = require('../tail');
 
