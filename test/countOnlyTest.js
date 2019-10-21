@@ -14,11 +14,11 @@ describe('countOnly', () => {
     "Fang",
     "Joe"
   ];
-  const result = countOnly(firstNames,
+  const result = countOnly(firstNames ,
     { "Jason": true,
       "Karima": true,
       "Fang": true });
-
+      
   it('should return 1 for Janson', () => {
     assert.strictEqual(result["Jason"], 1)
   })
