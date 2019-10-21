@@ -13,3 +13,5 @@ assertArraysEqual([1, 2, 3], [1, 2]);
 assertArraysEqual([1, 5, 7, 3], [1, 5, 2, 3]);
 assertArraysEqual([1, 2, 3], [1, 2, 8]);
 assertArraysEqual([1, 2, 3], [8, 2, 3]);
+
+module.export = assertArraysEqual;
